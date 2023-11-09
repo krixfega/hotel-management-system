@@ -11,7 +11,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('room_id')->constrained('rooms'); // Fix: 'rooms' instead of 'room_id'
+            $table->foreignId('room_id')->constrained('rooms'); 
             $table->dateTime('check_in');
             $table->dateTime('check_out');
             // Add more booking-specific fields as needed

@@ -11,7 +11,7 @@ class CreateEventBookingsTable extends Migration
     {
         Schema::create('event_bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('customer_id')->constrained(customers);
             $table->foreignId('event_id')->constrained();
             // Add more event booking-specific fields as needed
             $table->timestamps();

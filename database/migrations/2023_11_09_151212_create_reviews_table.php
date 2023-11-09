@@ -10,8 +10,8 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained();
-            $table->foreignId('hotel_id')->constrained();
+            $table->foreignId('customer_id')->constrained(customers);
+            $table->foreignId('hotel_id')->constrained(hotels);
             $table->integer('rating');
             $table->text('comment')->nullable();
             // Add more review-specific fields as needed
