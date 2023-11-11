@@ -12,8 +12,8 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            // Add more customer-specific fields as needed
+            $table->string('phone');
+            $table->text('address'); // Ensure this line exists
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ class HotelSeeder extends Seeder
 {
     public function run()
     {
+        
         // Seed hotel information
         Hotel::factory()->create([
             'name' => 'Sample Hotel',

@@ -9,11 +9,14 @@ class CreateChatMessagesTable extends Migration
     public function up()
     {
         Schema::create('chat_messages', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained(); // Could be admin, staff, or customer
-            $table->text('message');
-            // Add more chat-specific fields as needed
+            //$table->id();
+            // Other chat message fields
+           // $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            //$table->foreign('user_id')->references('id')->on('users');
+            // Alternatively, you can explicitly define the type of the foreign key:
+            // $table->foreignId('user_id')->constrained('users');
         });
     }
 
